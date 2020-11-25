@@ -1,3 +1,4 @@
+
 /*     3.141592
  *    653589793      ____  _    ____  ____  ____  ____  ____ ___  _ _  _      ____  _____  _  ____  _     
  *   23    84       /  __\/ \  /  _ \/  __\/  __\/  __\/  _ \\  \/// \/ \__/|/  _ \/__ __\/ \/  _ \/ \  /|
@@ -5,7 +6,7 @@
  *    3    38       |  __/| |  | |-|||  __/|  __/|    /| \_/| /  \ | || |  ||| |-||  | |  | || \_/|| | \||
  *    3    27       \_/   \_/  \_/ \|\_/   \_/   \_/\_\\____//__/\\\_/\_/  \|\_/ \|  \_/  \_/\____/\_/  \|
  *    9    50 2     
- *  8 8    4197     Code Golf 100 Digits of Pi: C++17 in 234 Bytes 
+ *  8 8    4197     Code Golf 100 Digits of Pi: C++17 in 227 Bytes 
  *   16     93  SS
  * Alexander
  * Töpfer 2020
@@ -24,4 +25,4 @@ using namespace boost::multiprecision;
  * "T factorial(unsigned i, const Policy&); [with T = cpp_dec_float_100]"
  * Code from boost/math/special_functions/factorials.hpp
  */
-mp_float A=13591409,B=545140134,C=640320,D=1.5,E=1,(*f)(int)=[](int n){return n==0||n==1?1:n*f(n-1);},G=0,H;int main(){for(int k=0;k<7;k++){G+=(pow(-1,k)*f(6*k)*(A+B*k))/(f(3*k)*pow(f(k),3)*pow(C,3*k+D));}cout<<(H=E/(12*G)).str(100);}
+mp_float A=13591409,B=545140134,C=640320,D=1.5,E=1,(*f)(int)=[](int n){return n<2?1:n*f(n-1);},G=0,H;int main(){for(int k=0;k<7;k++){G+=(pow(-1,k)*f(6*k)*(A+B*k))/(f(3*k)*pow(f(k),3)*pow(C,3*k+D));}cout<<(H=E/(12*G)).str(100);}
