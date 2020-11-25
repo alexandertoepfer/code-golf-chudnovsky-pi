@@ -17,10 +17,10 @@
 #define cpp_float cpp_dec_float_100
 using namespace boost::math;
 using namespace boost::multiprecision;
-/* Unfortunately had to implement a custom factorial function because boost only accepts unsigned
+/* Unfortunately had to implement a custom factorial function because boost exceeds file size limit
  * otherwise it could have been less bytes:
  * "template <class T, class Policy>"
- * "T factorial(unsigned i, const Policy&);"
+ * "T factorial(unsigned i, const Policy&); [with T = cpp_dec_float_100]"
  * Code from boost/math/special_functions/factorials.hpp
  */
 cpp_float A=13591409,B=545140134,C=640320,D=1.5,E=1,(*f)(cpp_int)=[](cpp_int n){if(n>1){cpp_int r=1;for(cpp_int i=1;i<=n;i++)r=r*i;return cpp_float(r);}return E;},G=0,H;
